@@ -20,5 +20,5 @@ SuperCollider en Wikipedia - https://es.wikipedia.org/wiki/SuperCollider
 
 ### Live Coding (co34pt)
 
-* [__LIVE CODING__](https://theseanco.github.io/howto_co34pt_liveCode/)
-* [__Live Coding__](https://toplap.org/howto_co34pt_livecode-resources-about-how-i-live-code-in-supercollider/)
+* [__howto_co34pt_liveCode__](https://theseanco.github.io/howto_co34pt_liveCode/)
+* [__howto_co34pt_liveCode – Resources about how I live code in SuperCollider__](https://toplap.org/howto_co34pt_livecode-resources-about-how-i-live-code-in-supercollider/)
