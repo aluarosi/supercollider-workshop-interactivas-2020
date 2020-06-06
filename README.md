@@ -6,7 +6,7 @@ SuperCollider -  https://supercollider.github.io/
 
 ### Libros
 
-* __The SuperCollider Book__ - Scott Wilson, David Cottle, Nick Collins. The MIT Press. https://mitpress.mit.edu/books/supercollider-book
+* [__The SuperCollider Book__](https://mitpress.mit.edu/books/supercollider-book) - Scott Wilson, David Cottle, Nick Collins. The MIT Press. 
 * [__Computer Music with examples in SuperCollider 3__](http://rhoadley.net/courses/tech_resources/supercollider/tutorials/cottle/CMSC7105.pdf)
 
 ### Eli Fieldsteel
@@ -21,4 +21,3 @@ SuperCollider -  https://supercollider.github.io/
 
 * [__LIVE CODING__](https://theseanco.github.io/howto_co34pt_liveCode/)
 * [__Live Coding__](https://toplap.org/howto_co34pt_livecode-resources-about-how-i-live-code-in-supercollider/)
-Gj
