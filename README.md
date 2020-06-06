@@ -1,6 +1,7 @@
 # Taller de introducción a SuperCollider - Interactivas 2020
 
 SuperCollider -  https://supercollider.github.io/
+SuperCollider en Wikipedia - https://es.wikipedia.org/wiki/SuperCollider
 
 ## Referencias
 
