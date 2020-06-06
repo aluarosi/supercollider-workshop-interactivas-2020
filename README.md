@@ -8,7 +8,7 @@
 
 ### Documentación de SuperCollider
 
-* [Documentación de SuperCollider](https://doc.sccode.org/)
+* [__Documentación de SuperCollider__](https://doc.sccode.org/)
 
 ### Libros
 
