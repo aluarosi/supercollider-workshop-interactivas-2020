@@ -6,7 +6,7 @@
 
 ## Referencias
 
-### Documentación de SuperCollider
+### Documentación
 
 * [__Documentación de SuperCollider__](https://doc.sccode.org/)
 
