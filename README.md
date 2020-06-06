@@ -3,7 +3,12 @@
 * SuperCollider -  https://supercollider.github.io/
 * SuperCollider en Wikipedia - https://es.wikipedia.org/wiki/SuperCollider
 
+
 ## Referencias
+
+### Documentación de SuperCollider
+
+* [Documentación de SuperCollider](https://doc.sccode.org/)
 
 ### Libros
 
