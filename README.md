@@ -22,3 +22,10 @@ SuperCollider en Wikipedia - https://es.wikipedia.org/wiki/SuperCollider
 
 * [__howto_co34pt_liveCode__](https://theseanco.github.io/howto_co34pt_liveCode/)
 * [__howto_co34pt_liveCode – Resources about how I live code in SuperCollider__](https://toplap.org/howto_co34pt_livecode-resources-about-how-i-live-code-in-supercollider/)
+
+### JACK y PulseAudio (Linux)
+
+ * [__JACK vs PulseAudio__](https://jackaudio.org/faq/pulseaudio_and_jack.html)
+ * https://forum.manjaro.org/t/how-to-replace-pulseaudio-with-jack-jack-and-pulseaudio-together-as-friend/2086
+ * https://askubuntu.com/questions/572120/how-to-use-jack-and-pulseaudio-alsa-at-the-same-time-on-the-same-audio-device
+ * [__Jack and PulseAudio Together as Friends - Linux__](https://www.youtube.com/watch?v=6J-RQudJx30)
