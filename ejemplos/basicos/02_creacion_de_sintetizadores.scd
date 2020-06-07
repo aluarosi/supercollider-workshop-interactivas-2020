@@ -101,7 +101,7 @@ b.free;
 ////////////////////////////////////////////////////////////////////////////////
 
 //
-// Cambio de amplitud (volumen)
+// Cambio de amplitud (volumen) y tono
 //
 (
 SynthDef(\tonoBinaural2, {
@@ -128,3 +128,82 @@ e.set(\freq, 350);
 e.set(\freq, 400);
 
 e.free;
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Envolventes
+////////////////////////////////////////////////////////////////////////////////
+
+//
+// Sinte percusivo controlado por señal "puerta" (gate)
+//
+
+Env.new(levels: [0, 1, 0], times: [0.1, 1], curve: 'lin').plot;
+
+(
+SynthDef(\tonoBinaural3, {
+
+	arg freq = 440, incrementoFreq = 5, amp = 0.5, gate = 1;
+	var sig, env;
+
+	env = EnvGen.kr(
+		Env.new(
+			levels: [0, 1, 0],
+			times: [0.1, 1],
+			curve: 'lin'
+		),
+		gate: gate
+	);
+
+	sig = SinOsc.ar(freq: [freq, freq + incrementoFreq], mul: amp!2);
+	Out.ar(0, sig * env);
+
+}).add;
+)
+
+e = Synth(\tonoBinaural3, [\freq, 200, amp: 0.4]);
+e.set(\gate, 0);
+e.set(\gate, 1);
+
+//
+// Sinte percusivo que se auto-termina
+//
+(
+SynthDef(\tonoBinaural4, {
+
+	arg freq = 440, incrementoFreq = 5, amp = 0.5, gate = 1;
+	var sig, env;
+
+	env = EnvGen.kr(
+		Env.new(
+			levels: [0, 1, 0],
+			times: [0.1, 1],
+			curve: 'lin'
+		),
+		doneAction: 2  // Esto termina el sinte cuando la envolvente termina
+	);
+
+	sig = SinOsc.ar(freq: [freq, freq + incrementoFreq], mul: amp!2);
+	Out.ar(0, sig * env);
+
+}).add;
+)
+
+f = Synth(\tonoBinaural4, [\freq, 200, amp: 0.4]);
+
+
+//
+// Pequeña secuencia
+//
+
+(
+Pdef(\goodvibes, Pbind(
+	\instrument, \tonoBinaural4,
+	\dur, Pseq([1,1,2,2,2], inf),
+	\tempo, 2,
+	\note, Pseq([-5, 7, 5, 4, 5], inf),
+	\octave, 5
+));
+)
+
+p = Pdef(\goodvibes).play;
