@@ -207,3 +207,4 @@ Pdef(\goodvibes, Pbind(
 )
 
 p = Pdef(\goodvibes).play;
+p.stop;

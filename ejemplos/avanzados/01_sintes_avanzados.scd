@@ -59,6 +59,7 @@ SynthDef.new(\pulseTest, {
 )
 
 x = Synth.new(\pulseTest);
+y = Synth.new(\pulseTest);
 x.set(\fund, 80, \maxPartial, 1, \ampHz, 1, \width, 0.7);
 y.set(\fund, 40, \maxPartial, 4, \ampHz, 1, \width, 0.2);
 x.free;
@@ -71,11 +72,42 @@ x = Synth.new(\pulseTest, [
 	\width, 0.15
 ]);
 
+//////////////////////////////////////////////////////////////////////////////
+// Dron - co34pt https://theseanco.github.io/howto_co34pt_liveCode/5-1-Drones
+//////////////////////////////////////////////////////////////////////////////
+
+(
+SynthDef(\dron, {
+	arg freq = 50 , res = 1.1;
+	var sig;
+
+	sig = DFM1.ar(
+		SinOsc.ar(
+			freq: [freq, freq*1.01],
+			phase: 0,
+			mul: 0.1
+		),
+		freq: freq*2,
+		res: SinOsc.kr(0.05).range(0.9,res),
+		inputgain: 1,
+		type: 0,
+		noiselevel: 0.0003,
+		mul: 0.5
+	);
+	Out.ar(0, sig);
+}).add;
+)
+
+x = Synth.new(\dron);
+y = Synth.new(\dron);
+x.set(\res, 1.1);
+x.set(\freq, 100);
+
+
 
 //////////////////////////////////////////////////////////////////////////////
 // Sinte Eli Fieldsteel - https://youtu.be/P85X1Ut3Hfc
 //////////////////////////////////////////////////////////////////////////////
-
 
 (
 SynthDef(\bpfsaw6, {
@@ -168,41 +200,3 @@ Synth(\bpfsaw6, [\freq, 40]);
 )
 
 
-//////////////////////////////////////////////////////////////////////////////
-// Sinte Eli Fieldsteel - https://youtu.be/LKGGWsXyiyo
-//////////////////////////////////////////////////////////////////////////////
-
-(
-SynthDef.new(\pulseTest, {
-	arg ampHz=4, fund=40, maxPartial=4, width=0.5;
-	var amp1, amp2, freq1, freq2, sig1, sig2;
-	// Alternation between L and R channels
-	amp1 = LFPulse.kr(ampHz, iphase: 0, width: 0.12) * 0.75;
-	amp2 = LFPulse.kr(ampHz, iphase: 0.5, width: 0.12) * 0.75;
-	// Subtlety: adds a little of 1st harmonic (octave)
-	freq1 = LFNoise0.kr(4).exprange(fund, fund*maxPartial).round(fund);
-	freq2 = LFNoise0.kr(4).exprange(fund, fund*maxPartial).round(fund);
-	freq1 = freq1 * LFPulse.kr(8, add:1);
-	freq2 = freq2 * LFPulse.kr(6, add:1);
-	sig1 = Pulse.ar(freq1, width, amp1);
-	sig2 = Pulse.ar(freq2, width, amp2);
-	sig1 = FreeVerb.ar(sig1, mix: 0.7, room: 0.8, damp: 0.25);
-	sig2 = FreeVerb.ar(sig2, mix: 0.7, room: 0.8, damp: 0.25);
-	Out.ar(0, sig1);
-	Out.ar(1, sig2);
-}).add;
-
-)
-
-x = Synth.new(\pulseTest);
-x.set(\fund, 80, \maxPartial, 1, \ampHz, 1, \width, 0.7);
-y.set(\fund, 40, \maxPartial, 4, \ampHz, 1, \width, 0.2);
-x.free;
-y.free;
-
-x = Synth.new(\pulseTest, [
-	\ampHz, 3.3,
-	\fund, 48,
-	\maxPartial, 4,
-	\width, 0.15
-]);
