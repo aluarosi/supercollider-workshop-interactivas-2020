@@ -28,6 +28,10 @@
 * [__howto_co34pt_liveCode__](https://theseanco.github.io/howto_co34pt_liveCode/)
 * [__howto_co34pt_liveCode – Resources about how I live code in SuperCollider__](https://toplap.org/howto_co34pt_livecode-resources-about-how-i-live-code-in-supercollider/)
 
+### Cursos
+
+[Coursera - Composición algorítmica en Supercollider](https://www.coursera.org/learn/composicion-algoritmica-supercollider)
+
 ### JACK y PulseAudio (Linux)
 
  * [__JACK vs PulseAudio__](https://jackaudio.org/faq/pulseaudio_and_jack.html)
