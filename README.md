@@ -30,7 +30,7 @@
 
 ### Cursos
 
-[Coursera - Composición algorítmica en Supercollider](https://www.coursera.org/learn/composicion-algoritmica-supercollider)
+* [__Coursera - Composición algorítmica en Supercollider__](https://www.coursera.org/learn/composicion-algoritmica-supercollider)
 
 ### JACK y PulseAudio (Linux)
 
